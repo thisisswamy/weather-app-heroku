@@ -1,0 +1,41 @@
+
+.card{
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    justify-content: center;
+    
+}
+h1{
+    color: rgb(247, 245, 244);
+    font-weight: 600;
+    text-align: center;
+    padding-top: 5ch;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+button{
+    color: rgb(241, 241, 245);
+    background-color: blue;
+    border-radius: 10px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-size: large;
+}
+
+img{
+   padding-left:160px ;
+   padding-top: 5px;
+    height:120px;
+    width: auto;
+    justify-content: center;
+}
+@media only screen and  (max-width:420px) {
+ img{
+    padding-left:100px 
+ }
+    
+}

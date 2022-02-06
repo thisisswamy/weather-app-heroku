@@ -1,0 +1,56 @@
+<div>
+    <h1 class="title">Wel come to Weather App !</h1>
+</div>
+
+
+<div class="container">
+    <div class="pt-3">
+        <div class="card fcard">
+            <div class="container justify-content-center" >
+                <form class="form-inline cls" #userlogin = "ngForm" (ngSubmit) = "onSubmit(userlogin.value)">
+                    <div class="form-group mx-sm-3 mb-2">
+                      <input type="text"  class="form-control"  placeholder="Enter Your location" #location="ngModel" name="location" ngModel  [class.is-invalid]="location.invalid && location.touched">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mb-2 Button">Search</button>
+                </form>
+                <div  style="text-align: center;"><small class="text-danger">{{err}}</small></div>
+                <hr style="margin: 20px;">
+                <div class="card cls2">
+                    <div class="card-body">
+                    <a class=" stretched-link text-decoration-none linkblock"  (click)="fr()" >
+                        <h1> {{clocation}} &nbsp;{{country}}</h1>
+                        <p>{{ctime}}</p>
+                        <div class="container" style="text-align: center;">
+                            <div class=Img>
+                                <img src="../../assets/sun2-removebg-preview.png" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <h1 style="text-align: center;">{{ctemparature}} &#176; C</h1>
+                               <div >
+                                   <ul >
+                                       <li>FEELS LIKE  <h4>{{cweatherdescription}}</h4></li>
+                                       <li>HUMIDITY  <h4>{{humidity}} % </h4></li>
+                                       <li>WIND SPEED  <h4>{{windspeed}} kmph</h4></li>
+                                       
+                                   </ul>
+                               </div>
+                        </div>
+                        
+                    </a>
+                   
+                </div>
+                </div>
+                <div class="container d">
+                    <div class="container ">
+                        <div class="container" style="width:150px;">
+                            <button class=" mt-3 btn btn-primary" style="width: 100%;"  (click)="logoutUser()">Logout</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
