@@ -9,7 +9,11 @@ export class AuthGuard implements CanActivate {
  constructor(private wr:WeatherService,
   private _router:Router){}
   canActivate():boolean{
-    return true;
+    if(!this.wr.isUserLoggedIn.value){
+      this._router.navigate(['user'])
+      return false
+    }
+    return true
   }
 }
 

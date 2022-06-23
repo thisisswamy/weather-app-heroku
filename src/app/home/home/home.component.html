@@ -1,0 +1,58 @@
+<div class="wrapper">
+    <div class="home-card">
+        <div class="form">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder=" Search" formControlName="cityName">
+                </div>
+                <button>Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="error" *ngIf="errorMsge">
+      <div class="alert alert-danger col-md-6 ">
+       City not found please enter correct city name
+      </div>
+    </div>
+    <div class="data-card">
+        <div class="info" *ngIf="map.size<1">
+            <p class="heading">Welcome to weather app</p>
+            <p>Wanna know how is weather in your city, what are you waiting for just type your city and hit search button</p>
+        </div>
+        <div class="weather-info" *ngIf="map.size>1">
+            <div class="header">
+                <div>
+                    <h2> {{weatherData.location}} , &nbsp; {{weatherData.country}}</h2>
+                    <small>{{weatherData.dateTime | date :'medium'}}</small>
+                </div>
+                <div>
+                    <small>Current Temparature</small>
+                    <h1> {{weatherData.temp}} K </h1>
+                    <h4>{{weatherData.description}}</h4>
+                </div>
+            </div>
+            <div class="addtional-info">
+                <div class="cards">
+                    <p>feels like</p>
+                    <small>{{weatherData.feelsLike}}</small>
+                </div>
+                <div class="cards ">
+                    <p>min temparature</p>
+                    <small>{{weatherData.minTemp}} k</small>
+                </div>
+                <div class="cards ">
+                    <p>max temparature</p>
+                    <small>{{weatherData.maxTemp}} k</small>
+                </div>
+                <div class="cards ">
+                    <p>pressure</p>
+                    <small>{{weatherData.pressure}}</small>
+                </div>
+                <div class="cards ">
+                    <p>wind speed</p>
+                    <small>{{weatherData.windSpeed}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

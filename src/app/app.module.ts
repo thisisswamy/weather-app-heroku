@@ -6,14 +6,11 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './services/weather.service';
-import { PagenotFoundComponent } from './pagenot-found/pagenot-found.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagenotFoundComponent,
-    ForgotpasswordComponent,
+   
     
   ],
   imports: [

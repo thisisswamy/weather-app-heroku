@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class WeatherService {
   public loc:any;
+  isUserLoggedIn=new BehaviorSubject<boolean>(false);
   constructor(private http:HttpClient,private _router:Router) { }
   getData(location:any):Observable<any>{
     this.loc=location;
