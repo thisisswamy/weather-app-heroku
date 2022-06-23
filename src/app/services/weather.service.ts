@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class WeatherService {
   public loc:any;
+  isUserLoggedIn=new BehaviorSubject<boolean>(false);
   constructor(private http:HttpClient,private _router:Router) { }
   getData(location:any):Observable<any>{
     this.loc=location;
@@ -17,19 +18,6 @@ export class WeatherService {
      return this.http.get("https://api.openweathermap.org/data/2.5/forecast?q="+location +"&appid=38c18f50a4e4f31e77406ee722f0ac32");
   }
 
-  showLocation(){
-    return this.loc;
-  }
-  loggedIn(){
-    return !!localStorage.getItem('token')
-  }
-  getToken(){
-    return localStorage.getItem('token')
-  }
-  logoutUser(){
-    localStorage.removeItem('token')
-    this._router.navigate(['/login'])
-  }
-
+  
 
 }
