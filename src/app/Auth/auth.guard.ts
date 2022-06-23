@@ -9,12 +9,7 @@ export class AuthGuard implements CanActivate {
  constructor(private wr:WeatherService,
   private _router:Router){}
   canActivate():boolean{
-    if(this.wr.loggedIn()){
-      return true
-    }else{
-      this._router.navigate(['/pagenot-found'])
-      return false
-    }
+    return true;
   }
 }
 
