@@ -2,11 +2,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    // height: 100vh;
    
     .login-card{
         box-shadow: 0 0 10px 0 #318CE7;
         padding: 30px;
+        margin-top: 4rem;
+        width: 40%;
+        @media(max-width:1020px){
+            width: 70%;
+        }
         p{
             font-size: 2em;
             border-bottom: 4px solid #073980;
