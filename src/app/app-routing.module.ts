@@ -5,14 +5,14 @@ import { User } from './services/user';
 
 
 const routes: Routes = [
-  {path:'',redirectTo:'user',pathMatch:'full'},
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {
     path:'user',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   {
     path:'home',
-    canActivate:[AuthGuard],
+    // canActivate:[AuthGuard],
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
